@@ -8,12 +8,24 @@ const ref = {
   Destroy: document.querySelector("button[data-destroy]"),
 };
 
-console.log(ref);
-
-ref.Create.addEventListener("click", () => {
-  createBoxes(ref.Input.value);
-});
+ref.Create.addEventListener("click", () => createBoxes(ref.Input.value));
+ref.Destroy.addEventListener("click", () => destroyBoxes());
 
 function createBoxes(amount) {
-  console.log(amount);
+  const arrayElements = [];
+
+  for (let i = 30; i < 30 + amount * 10; i += 10) {
+    let refDiv = document.createElement("div");
+    refDiv.style.width = `${i}px`;
+    refDiv.style.height = `${i}px`;
+    refDiv.style.backgroundColor = getRandomHexColor();
+    arrayElements.push(refDiv);
+  }
+  document.querySelector("#boxes").append(...arrayElements);
+  return;
+}
+
+function destroyBoxes() {
+  document.querySelector("#boxes").innerHTML = "";
+  return;
 }
