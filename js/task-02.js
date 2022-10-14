@@ -15,7 +15,6 @@ ingredients.forEach((element) => {
   refItem.classList.add("item");
   refItem.textContent = element;
   itemsRefArray.push(refItem);
-  return;
 });
 
 refIngredients.append(...itemsRefArray);

@@ -20,10 +20,7 @@ let strWhisAllItem = ``;
 
 images.forEach((element) => {
   const { url, alt } = element;
-  // console.log(`url: ${url}    alt: ${alt}`);
   strWhisAllItem += `<li class="gallery-item"><img class="gallery-img" src=\"${url}\" alt=\"${alt}\"/></li>`;
-  // console.log(strWhisAllItem);
-  return;
 });
 
 refGallery.insertAdjacentHTML("afterbegin", strWhisAllItem);
